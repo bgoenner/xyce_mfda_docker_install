@@ -1,0 +1,11 @@
+
+
+SUITESPARCE_PATH = ./../suiteSparce-src
+TRILINOS_INSTALL = /usr/local/trilinos_serial
+XYCE_PATH        = /opt/xyce-src/Xyce 
+
+
+cmake \
+    -D SuiteSparsePath=$SUITESPARCE_PATH \
+    -D CMAKE_INSTALL_PREFIX=$TRILINOS_INSTALL \
+    $XYCE_PATH/cmake/trilinos/AMD
