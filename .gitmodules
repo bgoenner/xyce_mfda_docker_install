@@ -1,6 +1,6 @@
 [submodule "SuiteSparse"]
 	path = src/suiteSparse-src
-	url = https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+	url = https://github.com/DrTimothyAldenDavis/SuiteSparse
 	branch = v7.3.1
 [submodule "cmake"]
 	path = src/cmake-src
