@@ -1,0 +1,11 @@
+
+
+INSTALL_CMAKE_DIR=../cmake-local
+
+cd /opt/xyce_src/xyce_tpl
+git clone https://github.com/Kitware/CMake.git -b v3.28.1 cmake-src
+
+mkdir cmake-local
+
+cd cmake-src
+./bootstrap --prefix=$INSTALL_CMAKE_DIR && make && make install

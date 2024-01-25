@@ -1,0 +1,20 @@
+[submodule "SuiteSparse"]
+	path = src/suiteSparse-src
+	url = https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+	branch = v7.3.1
+[submodule "cmake"]
+	path = src/cmake-src
+	url = https://github.com/Kitware/CMake
+	branch = v3.28.1
+[submodule "Trilinos"]
+	path = src/trilinos-src
+	url = https://github.com/trilinos/Trilinos
+	branch = trilinos-release-14-4-0
+[submodule "ADMS"]
+	path = src/ADMS-src
+	url = https://github.com/Qucs/ADMS
+	branch = release-2.3.7
+[submodule "Xyce"]
+	path = src/Xyce
+	url = https://github.com/Xyce/Xyce
+	branch = tags/Release-7.8.0 

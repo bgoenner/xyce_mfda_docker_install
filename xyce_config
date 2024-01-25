@@ -1,15 +1,15 @@
 
 # Xyce Config file
  
-XYCE_SRC=/xyce_src/Xyce
+XYCE_SRC=/opt/xyce_src/Xyce
 XYCE_INSTALL=/usr/local/xyce_dev
-TRILINOS_ROOT=/opt/Trilinos/Trilinos_Serial
+TRILINOS_ROOT=/usr/local/trilinos_serial
  
 #--enable-sharable \
 #--enable-xyce=shareable
  
  
-/usr/local/bin/cmake \
+cmake \
 -D Trilinos_ROOT=$TRILINOS_ROOT \
 -D Xyce_PLUGIN_SUPPORT=ON \
 -D CMAKE_INSTALL_PREFIX=$XYCE_INSTALL \

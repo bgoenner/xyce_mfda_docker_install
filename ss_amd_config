@@ -1,8 +1,8 @@
 
 
-SUITESPARCE_PATH = ./../suiteSparce-src
-TRILINOS_INSTALL = /usr/local/trilinos_serial
-XYCE_PATH        = /opt/xyce-src/Xyce 
+SUITESPARCE_PATH=./../suiteSparce-src
+TRILINOS_INSTALL=/usr/local/trilinos_serial
+XYCE_PATH=/opt/xyce_src/Xyce 
 
 
 cmake \
