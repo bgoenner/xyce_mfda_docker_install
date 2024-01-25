@@ -1,7 +1,7 @@
 [submodule "SuiteSparse"]
-	path = src/suiteSparse-src
+	path = src/suiteSparce-src
 	url = https://github.com/DrTimothyAldenDavis/SuiteSparse
-	branch = v7.3.1
+	branch = tags/v7.3.1
 [submodule "cmake"]
 	path = src/cmake-src
 	url = https://github.com/Kitware/CMake
@@ -13,7 +13,7 @@
 [submodule "ADMS"]
 	path = src/ADMS-src
 	url = https://github.com/Qucs/ADMS
-	branch = release-2.3.7
+	branch = tags/release-2.3.7
 [submodule "Xyce"]
 	path = src/Xyce
 	url = https://github.com/Xyce/Xyce
