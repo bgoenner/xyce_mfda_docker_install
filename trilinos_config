@@ -7,15 +7,19 @@ SRC_PATH=/opt/xyce_src/xyce_tpl/trilinos-src
 CMAKE_28=/opt/xyce_src/xyce_tpl/cmake-local/bin/cmake
 #ARCH_DIR=/opt/Trilinos/Trilinos_Serial
 
+
+
 TRILINOS_INSTALL_PATH=/usr/local/trilinos_serial
  
 $CMAKE_28  \
 -C $XYCE_PATH/cmake/trilinos/trilinos-base.cmake \
 -D CMAKE_INSTALL_PREFIX=$TRILINOS_INSTALL_PATH \
--D AMD_LIBRARY_DIRS=/usr/local/lib64 \
--D AMD_INCLUDE_DIRS=/usr/local/include \
+-D AMD_LIBRARY_DIRS=/usr/local/trilinos_serial/lib \
+-D AMD_INCLUDE_DIRS=/usr/local/trilinos_serial/include \
 $SRC_PATH
 
+#-D AMD_LIBRARY_DIRS=/usr/local/lib64 \
+#-D AMD_INCLUDE_DIRS=/usr/local/include \
 
 #    -D CMAKE_INSTALL_PREFIX=/trilinos/install/path \
 #    -D AMD_LIBRARY_DIRS=/trilinos/install/path/lib \

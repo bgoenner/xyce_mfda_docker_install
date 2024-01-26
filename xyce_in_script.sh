@@ -100,16 +100,25 @@ if [ "$OS" = "CentOS Linux" ]; then
     
     make_cmake_28
 
+    cd $INSTALL_ROOT/xyce_src/xyce_tpl
+    git clone https://github.com/trilinos/Trilinos.git -b trilinos-release-14-4-0 trilinos-src
+
 elif [[ "$OS" = "Ubuntu" ]]; then
 
-    REQ_LIBRARIES="git libblas3 libblas-dev liblapack3 liblapack-dev bison flex libfftw3-bin libfftw3-dev cmake make gcc g++ gfortran-11"
+    REQ_LIBRARIES="git libblas3 libblas-dev liblapack3 liblapack-dev bison flex libfftw3-bin libfftw3-dev cmake make gcc g++ gfortran-11 gfortran doxygen graphviz"
 
-    #CMAKE_LIBS="openssl openssl-dev"
+    CMAKE_LIBS="openssl libssl-dev"
 
     ADMS_LIBS="build-essential automake libtool gperf flex bison libxml2 libxml2-dev libxml-libxml-perl libgd-perl"
 
     apt-get update
     apt-get install -y $REQ_LIBRARIES $ADMS_LIBS
+
+    make_cmake_28
+
+    cd $INSTALL_ROOT/xyce_src/xyce_tpl
+    git clone https://github.com/trilinos/Trilinos.git -b trilinos-release-14-4-0 trilinos-src
+
 
     echo "UBUNTU"
 fi
@@ -147,7 +156,7 @@ cd $INSTALL_ROOT
 mkdir xyce_src
 cd xyce_src
 
-git clone https://github.com/Xyce/Xyce Xyce
+#git clone https://github.com/Xyce/Xyce Xyce
 
 ## Install TPL
 
@@ -172,7 +181,7 @@ cd xyce_tpl
 mkdir ss_amd_build
 cd ss_amd_build
 ../../../ss_amd_config
-cmake --build . -t install
+cmake --build . -j 2 -t install
 
 ### Install Trilinos
 
@@ -196,7 +205,7 @@ mkdir trilinos-build
 cd trilinos-build
 ../../../trilinos_config
 
-cmake --build . -j 2 -t install
+./../cmake-local/bin/cmake --build . -j 2 -t install
 
 ## Install AMDS
 #
@@ -232,7 +241,7 @@ make install
 ### Build and Install Xyce
 #
 
-cd $INSTALL_ROOT/xyce-src/
+cd $INSTALL_ROOT/xyce_src/
 mkdir xyce-build
 cd xyce-build
 

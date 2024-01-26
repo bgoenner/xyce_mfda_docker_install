@@ -18,3 +18,7 @@
 	path = src/Xyce
 	url = https://github.com/Xyce/Xyce
 	branch = tags/Release-7.8.0 
+[submodule "src/ADMS-src"]
+	path = src/ADMS-src
+	url = https://github.com/Qucs/ADMS
+	branch = tags/release-2.3.7

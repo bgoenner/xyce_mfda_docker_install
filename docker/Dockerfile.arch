@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 
 RUN apt-get update
 
-Run apt-get install -y libssl-dev 
+Run apt-get install -y mk-build-deps nginx
 
 # Xyce software
 RUN apt-get install -y git libblas3 libblas-dev liblapack3 liblapack-dev bison flex libfftw3-bin libfftw3-dev cmake make gcc g++ gfortran-11
@@ -12,14 +12,11 @@ RUN apt-get install -y git libblas3 libblas-dev liblapack3 liblapack-dev bison f
 RUN apt-get install -y build-essential automake libtool gperf flex bison libxml2 libxml2-dev libxml-libxml-perl libgd-perl
 
 # Make lib to get libssl-dev
-#Run apt-get install -y libssl-dev 
+Run apt-get install -y mk-build-dep nginx
 
 RUN mkdir -p /opt/xyce_src/xyce_tpl
 
-# need from Trilinos
-RUN ln -s /usr/bin/python /usr/bin/python3
-
-#RUN cd /opt/xyce_src/ && git clone https://github.com/Xyce/Xyce Xyce
+RUN cd /opt/xyce_src/ && git clone https://github.com/Xyce/Xyce Xyce
 
 #RUN cd /opt/xyce_src/xyce_tpl/ && \
 #    git clone https://github.com/DrTimothyAldenDavis/SuiteSparse.git -b v7.3.1 suiteSparce-src && \
@@ -29,12 +26,9 @@ RUN ln -s /usr/bin/python /usr/bin/python3
 
 COPY ../src/suiteSparce-src /opt/xyce_src/xyce_tpl
 COPY ../src/cmake-src       /opt/xyce_src/xyce_tpl
-# trilinos needs to be pulled from github
-#COPY ../src/trilinos-src    /opt/xyce_src/xyce_tpl
+COPY ../src/trilinos-src    /opt/xyce_src/xyce_tpl
 COPY ../src/ADMS-src        /opt/xyce_src/xyce_tpl
-COPY ../src/Xyce            /opt/xyce_src/
 
-RUN git clone https://github.com/trilinos/Trilinos -b trilinos-release-14-4-0 trilinos-src
 
 COPY ../ss_amd_config        /opt/xyce_src
 COPY ../trilinos_config      /opt/xyce_src
