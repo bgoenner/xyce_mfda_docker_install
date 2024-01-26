@@ -53,7 +53,7 @@ default_copy_dir:
 
 
 default_run_install:
-	docker exec -w /opt/xyce_src/xyce_tpl/ $(DOCKER_CONTAINER) git clone https://github.com/trilinos/Trilinos.git -b trilinos-release-14-4-0 trilinos-src
+	#docker exec -w /opt/xyce_src/xyce_tpl/ $(DOCKER_CONTAINER) git clone https://github.com/trilinos/Trilinos.git -b trilinos-release-14-4-0 trilinos-src
 	docker exec -w /opt $(DOCKER_CONTAINER) bash xyce_in_script.sh
 
 docker_build_from_start: default_copy_dir default_run_install

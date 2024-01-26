@@ -4,6 +4,7 @@
 INSTALL_ROOT=/opt 
 #XYCE_SRC_ROOT = 
 #TPL_ROOT      = 
+CMAKE_28       = ./../cmake-local/bin/cmake
 
 if [ -f /etc/os-release ]; then
     # freedesktop.org and systemd
@@ -205,7 +206,7 @@ mkdir trilinos-build
 cd trilinos-build
 ../../../trilinos_config
 
-./../cmake-local/bin/cmake --build . -j 2 -t install
+$CMAKE_28 --build . -j 2 -t install
 
 ## Install AMDS
 #
@@ -246,7 +247,7 @@ mkdir xyce-build
 cd xyce-build
 
 ../../xyce_config
-cmake --build . -j 2 -t install
+$CMAKE_28 --build . -j 2 -t install
 
 
 
