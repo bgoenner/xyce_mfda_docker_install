@@ -122,6 +122,21 @@ elif [[ "$OS" = "Ubuntu" ]]; then
 
 
     echo "UBUNTU"
+elif [[ "$OS" = "Debian GNU/Linux" ]]; then
+    REQ_LIBRARIES="git libblas3 libblas-dev liblapack3 liblapack-dev bison flex libfftw3-bin libfftw3-dev cmake make gcc g++ gfortran-11 gfortran doxygen graphviz"
+
+    CMAKE_LIBS="openssl libssl-dev"
+
+    ADMS_LIBS="build-essential automake libtool gperf flex bison libxml2 libxml2-dev libxml-libxml-perl libgd-perl"
+
+    apt-get update
+    apt-get install -y $REQ_LIBRARIES $ADMS_LIBS
+
+    make_cmake_28
+
+    cd $INSTALL_ROOT/xyce_src/xyce_tpl
+    git clone https://github.com/trilinos/Trilinos.git -b trilinos-release-14-4-0 trilinos-src
+
 fi
 
 

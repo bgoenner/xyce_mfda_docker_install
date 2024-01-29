@@ -6,13 +6,16 @@ SHELL		= /bin/bash
 #.DEFAULT_GOAL := default
 
 
-DOCKER_IMAGE = centos:8.4.2105
+DOCKER_IMAGE = debian:bookworm
+#DOCKER_IMAGE = centos:8.4.2105
 #DOCKER_IMAGE = ubuntu:22.04
 
 # Ubuntu
 #DOCKER_CONTAINER    = hopeful_carson
 # CENTOS
-DOCKER_CONTAINER    = tender_pasteur
+#DOCKER_CONTAINER    = tender_pasteur
+# debian
+DOCKER_CONTAINER    = heuristic_mcclintock
 DOCKER_INSTALL_ROOT = $(DOCKER_CONTAINER):/opt
 
 
